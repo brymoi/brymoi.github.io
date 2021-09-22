@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+	<meta charset="utf-8">
+	<title>Teste de canvas</title>
+
+	<style type="text/css">
+		body{
+			overflow: hidden;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.bar {
+		 	overflow: hidden;
+		 	background-color: #1d1135;
+		 	margin: 0;
+		 	font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.colorSelect {
+			-webkit-appearance: button;
+			-webkit-border-radius: 2px;
+			-webkit-padding-end: 20px;
+			-webkit-padding-start: 2px;
+			-webkit-user-select: none;
+			background-color: #1d1135;
+			border: none;
+			color: white;
+			font-size: inherit;
+			margin: 0;
+			overflow: hidden;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			text-overflow: ellipsis;
+		}
+
+		.bar a{
+			float: left;
+			text-align: center;
+			font-size: 16px;
+			padding: 14px 16px;
+			color: white;
+		}
+
+		.bar a:hover {
+			background-color: black;
+		}
+
+		canvas {
+			border: none;
+			background-color: black;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="bar">
+		<a onclick="aumenta()">+</a>
+		<a onclick="diminui()">-</a>
+		<form>
+			<select name="Color" class="colorSelect" onchange="changeColor(value)">
+				<option value="#0095DD">default</option>
+				<option value="red">vermelho</option>
+				<option value="green">verde</option>
+				<option value="blue">azul</option>
+				<option value="rgb">RGB(em breve)</option>
+			</select>
+		</form>
+	</div>
+
+	<canvas id="canvas"></canvas>
+	<script src="scripts/canvas.js"></script>
+
+</body>
+</html>
