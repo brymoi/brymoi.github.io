@@ -20,6 +20,7 @@ function rgb(){
     else if (r == 255 && b >= 1 && g == 0) b-=1;
 
     ctx.fillStyle = "rgb(" + r + ", " + g + "," + b + ")";
+    console.log("rgb(" + r + ", " + g + "," + b + ")");
 }
 
 function rectangle() {
