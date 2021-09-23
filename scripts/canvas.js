@@ -3,32 +3,30 @@ var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight-40;
 
-var rectSize = 10, x = canvas.width/2, y = canvas.height-30, dx = 2, dy = 2, color = "#0095DD", r = 0, g = 0, b = 0;
+var rectSize = 10, x = canvas.width/2, y = canvas.height-30, dx = 2, dy = 2, color = "#0095DD",
+    r = 255, g = 0, b = 0, bol = 0;
 
 function changeColor(newcolor){
     color = newcolor;
 }
 
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
 function rgb(){
-    r += 1; g += 2; b += 3;
 
-    if(r > 255) r = 0;
-    else if(g > 255) g = 0;
-    else if(b > 255) b = 0;
+    if (r == 255 && g <= 254 && b == 0) g+=5;
+    else if (g == 255 && r >= 1) r-=5;
+    else if (g == 255 && b <= 254) b+=5;
+    else if (b == 255 && g >= 1) g-=5;
+    else if (b == 255 && r <= 254) r+=5;
+    else if (r == 255 && b >= 1 && g == 0) b-=5;
 
-    ctx.fillStyle = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+    ctx.fillStyle = "rgb(" + r + ", " + g + "," + b + ")";
 }
 
 function rectangle() {
     ctx.beginPath();
     ctx.fillRect(x, y, rectSize, rectSize);
     if(color == "rgb") rgb();
-    ctx.fillStyle = color;
+    else ctx.fillStyle = color;
     ctx.fill();
     ctx.closePath();
 }
