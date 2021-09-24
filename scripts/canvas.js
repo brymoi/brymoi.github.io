@@ -12,12 +12,12 @@ function changeColor(newcolor){
 
 function rgb(){
 
-    if (r == 255 && g <= 254 && b == 0) g+=1;
-    else if (g == 255 && r >= 1) r-=1;
-    else if (g == 255 && b <= 254) b+=1;
-    else if (b == 255 && g >= 1) g-=1;
-    else if (b == 255 && r <= 254) r+=1;
-    else if (r == 255 && b >= 1 && g == 0) b-=1;
+    if (r == 255 && g <= 254 && b == 0) g+=5;
+    else if (g == 255 && r >= 1) r-=5;
+    else if (g == 255 && b <= 254) b+=5;
+    else if (b == 255 && g >= 1) g-=5;
+    else if (b == 255 && r <= 254) r+=5;
+    else if (r == 255 && b >= 1 && g == 0) b-=5;
 
     ctx.fillStyle = "rgb(" + r + ", " + g + "," + b + ")";
     console.log("rgb(" + r + ", " + g + "," + b + ")");
